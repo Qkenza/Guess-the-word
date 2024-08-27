@@ -1,6 +1,5 @@
 
 const letters = document.querySelectorAll(".box");
-const loadingDiv = document.querySelector(".info-bar");
 const  word_LENGTH = 5
 
 async function init() 
