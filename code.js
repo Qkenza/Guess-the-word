@@ -1,7 +1,7 @@
 
 const letters = document.querySelectorAll(".box");
 const loadingDiv = document.querySelector(".info-bar");
-
+const  word_LENGTH = 5
 
 async function init() 
 {
@@ -12,24 +12,27 @@ async function init()
   //  adds a letter to the current guess
   function addLetter(letter) 
   {
-    if (currentGuess.length < 5) {
+    if (currentGuess.length < word_LENGTH) {
       currentGuess += letter;
     } else {
       currentGuess = currentGuess.substring(0, currentGuess.length - 1) + letter;
     }
 
-    letters[currentRow * 5 + currentGuess.length - 1].innerText = letter;
+    letters[currentRow * word_LENGTH + currentGuess.length - 1].innerText = letter;
   }
 
   async function commit(){
-    if (currentGuess.length === 5){
+    if (currentGuess.length !== word_LENGTH){
       return;
     }
 
-    currentRow++;
-    currentGuess = "";
+    
   }
 
+  function backspace() {
+    currentGuess = currentGuess.substring(0, currentGuess.length - 1);
+    letters[currentRow * word_LENGTH + currentGuess.length].innerText = '';
+  }
  
   
   // listening for event keys and routing to the right function
