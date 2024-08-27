@@ -8,6 +8,11 @@ async function init()
   let currentRow = 0;
   let currentGuess = "";
 
+  // fetches the word of the day from an API
+  const respond =  await fetch("https://words.dev-apis.com/word-of-the-day");
+  const res_obj =  await respond.json(); 
+  const word = res_obj.word.toUpperCase();
+
 
   //  adds a letter to the current guess
   function addLetter(letter) 
