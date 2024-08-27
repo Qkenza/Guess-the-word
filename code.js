@@ -21,6 +21,15 @@ async function init()
     letters[currentRow * 5 + currentGuess.length - 1].innerText = letter;
   }
 
+  async function commit(){
+    if (currentGuess.length === 5){
+      return;
+    }
+
+    currentRow++;
+    currentGuess = "";
+  }
+
  
   
   // listening for event keys and routing to the right function
