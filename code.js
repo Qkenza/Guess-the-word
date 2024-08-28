@@ -33,10 +33,14 @@ async function init()
 
     const guessLetter = currentGuess.split("");
 
-    // Finding a correct letter in the  word and applying a visual effect
+    // Finding a correct or close or wrong letter in the  word and applying a visual effect
      for (let i = 0; i < word_LENGTH; i++){
       if (guessLetter[i] === wordLetter[i]){
-        letters[currentRow * word_LENGTH + i].classList.add(".correct")
+        letters[currentRow * word_LENGTH + i].classList.add("correct")
+      } else if ( wordLetter.includes(guessLetter[i])){
+        letters[currentRow * word_LENGTH + i].classList.add("close") 
+      } else {
+        letters[currentRow * word_LENGTH + i].classList.add("wrong")
       }
     }
 
