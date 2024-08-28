@@ -11,6 +11,7 @@ async function init()
   const respond =  await fetch("https://words.dev-apis.com/word-of-the-day");
   const res_obj =  await respond.json(); 
   const word = res_obj.word.toUpperCase();
+  const wordLetter = word.split("");
 
 
   //  adds a letter to the current guess
@@ -28,6 +29,15 @@ async function init()
   async function commit(){
     if (currentGuess.length !== word_LENGTH){
       return;
+    }
+
+    const guessLetter = currentGuess.split("");
+
+    // Finding a correct letter in the  word and applying a visual effect
+     for (let i = 0; i < word_LENGTH; i++){
+      if (guessLetter[i] === wordLetter[i]){
+        letters[currentRow * word_LENGTH + i].classList.add(".correct")
+      }
     }
 
     
