@@ -40,6 +40,11 @@ async function init()
       }
     }
 
+    // Increment currentRow to move to the next word after pressing Enter
+    currentRow++;
+    currentGuess = "";
+
+    }
     
   }
 
