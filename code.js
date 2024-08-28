@@ -44,7 +44,7 @@ async function init()
     currentRow++;
     currentGuess = "";
 
-    }
+    
     
   }
 
