@@ -4,13 +4,34 @@
 <head>
     <title>word game</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/keyboard.css">
 </head>
 
 <body>
-    <h1 id="headerLine"></h1>
-    <div id="grid-container"></div>
-    <script src="script.js"></script>
+    <header>
+        <ol>
+            <div id="leftBar">
+                <li id="language"></li>
+                <li id="linkChallenge"></li>
+                <li id="openKeyboard"></li>
+            </div>
+            <div id="rightBar">
+                <li id="statistics"></li>
+                <li id="settings"></li>
+                <li id="guide"></li>
+            </div>
+        </ol>
+    </header>
+    <div id="game">
+        <div class="text__messagebox"></div>
+        <div id="grid-container"></div>
+    </div>
+    <div class="keyboard"></div>
 </body>
+
+<script src="js/keyboard.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gameStart.js"></script>
 
 </html>
