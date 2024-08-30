@@ -1,0 +1,60 @@
+header {
+    margin: 20px;
+}
+
+#header__line {
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+}
+
+ol,
+ol div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+}
+
+#rightBar {
+    margin-left: 15em;
+}
+
+ol div li {
+    background-color: var(--bg2);
+    border-radius: 10px;
+    margin-left: 0.5em;
+    height: 3em;
+    width: 3em;
+    background-repeat: no-repeat;
+    background-size: 2em 2em;
+    background-position: center;
+}
+
+#guide {
+    background-image: url('../icons/guide.png');
+}
+
+#language {
+    background-image: url('../icons/language.png');
+    margin-left: 0;
+}
+
+#linkChallenge {
+    background-image: url('../icons/linkChallenge.png');
+}
+
+#settings {
+    background-image: url('../icons/settings.png');
+}
+
+#statistics {
+    background-image: url('../icons/statistics.png');
+}
+
+#openKeyboard {
+    background-image: url('../icons/keyboard.png');
+}

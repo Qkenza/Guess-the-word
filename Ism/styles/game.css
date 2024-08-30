@@ -1,0 +1,31 @@
+#game {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.columns {
+    display: flex;
+    border: 2px solid var(--columns__border);
+    border-radius: var(--border__raduis);
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    min-height: 60px;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 7px;
+}

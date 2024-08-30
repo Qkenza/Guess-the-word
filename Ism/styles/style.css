@@ -20,9 +20,6 @@
     font-weight: 700;
 }
 
-#headerLine {
-    margin: 0 0 10px 0;
-}
 
 body {
     background-color: var(--bg);
@@ -30,153 +27,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#grid-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.columns {
-    display: flex;
-    border: 2px solid var(--columns__border);
-    border-radius: var(--border__raduis);
-    justify-content: center;
-    align-items: center;
-    min-width: 60px;
-    min-height: 60px;
-    margin-left: 5px;
-    box-sizing: border-box;
-}
-
-@keyframes column__animation {
-    0% {
-        scale: 1;
-    }
-
-    50% {
-        scale: 1.2;
-    }
-
-    100% {
-        scale: 1;
-    }
-}
-
-.columns--active {
-    animation-duration: calc(var(--bounce__delay) * 1ms);
-    animation-name: column__animation;
-    border-color: var(--active__columns__border);
-}
-
-@keyframes flip__animation {
-    0% {
-        transform: rotateX(90deg);
-    }
-
-    100% {
-        transform: rotateX(0deg);
-    }
-}
-
-.animation {
-    transform-style: preserve-3d;
-    transform-origin: center;
-    animation-name: flip__animation;
-    animation-duration: calc(var(--flip__delay) * 1ms);
-}
-
-
-.rows {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 7px;
-}
-
-#emptyLine {
-    position: absolute;
-    border-radius: 10px;
-    background-color: var(--alerts_bg);
-    padding: 20px 100px;
-    top: 20px;
-    right: auto;
-    left: auto;
-}
-
-.yellow {
-    background-color: #F3C236;
-}
-
-.green {
-    background-color: #78B951;
-}
-
-.gray {
-    background-color: #a4aec4;
-}
-
-
-header {
-    margin: 20px;
-}
-
-ol,
-ol div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-li {
-    list-style: none;
-}
-
-#rightBar {
-    margin-left: 15em;
-}
-
-ol div li {
-    background-color: var(--bg2);
-    border-radius: 10px;
-    margin-left: 0.5em;
-    height: 3em;
-    width: 3em;
-    background-repeat: no-repeat;
-    background-size: 2em 2em;
-    background-position: center;
-}
-
-#guide {
-    background-image: url('../icons/guide.png');
-}
-
-#language {
-    background-image: url('../icons/language.png');
-    margin-left: 0;
-}
-
-#linkChallenge {
-    background-image: url('../icons/linkChallenge.png');
-}
-
-#settings {
-    background-image: url('../icons/settings.png');
-}
-
-#statistics {
-    background-image: url('../icons/statistics.png');
-}
-
-#openKeyboard {
-    background-image: url('../icons/keyboard.png');
-}
-
-#game {
-    display: flex;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    margin-top: 50px;
 }
 
 .text__messagebox {
@@ -192,4 +42,9 @@ ol div li {
 
 #loadingMessage {
     display: block;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
 }
