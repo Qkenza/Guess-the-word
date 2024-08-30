@@ -1,3 +1,12 @@
+let flipTime = $(':root').css('--flip__delay');
+let doneDelay = flipTime + 200;
+let bounceAnim = $(':root').css('--bounce__delay')
+
+let inputEvent = true
+let userWord = '';
+let guessWord = '';
+let $row = null;
+let $col = null;
 
 $(document).ready(function () {
     Keyboard.init();
@@ -10,7 +19,7 @@ $(document).ready(function () {
     $.ajax({
         url: 'https://words.dev-apis.com/word-of-the-day',
         beforeSend: loadingGame,
-        success: gameStart,
+        success: startGame,
         error: APIError,
         dataType: 'json',
         type: 'GET'
@@ -21,7 +30,7 @@ $(document).ready(function () {
 
 
 function loadingGame() {
-    $('<div>', { id: 'loadingMessage', class: 'textMessage', text: 'loading...' }).appendTo('body')
+    $('<div>', { id: 'loadingMessage', class: 'text__messagebox', text: 'loading...' }).prependTo('#game')
 }
 
 function APIError(error) {

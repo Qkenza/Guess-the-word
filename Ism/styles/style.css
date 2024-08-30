@@ -3,10 +3,13 @@
 :root {
     --bg2: #E5ECFF;
     --columns__border: #000000;
+    --active__columns__border: #787878;
     --border__raduis: 10px;
     --bg: #fff;
     --alerts_bg: #E5ECFF;
     --font_family: 'Montserrat', 'Open Sans', sans-serif;
+    --bounce__delay: 200;
+    --flip__delay: 200;
 }
 
 * {
@@ -14,7 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 #headerLine {
@@ -36,18 +39,53 @@ body {
 
 .columns {
     display: flex;
-    border: 1px solid var(--columns__border);
+    border: 2px solid var(--columns__border);
     border-radius: var(--border__raduis);
     justify-content: center;
     align-items: center;
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 60px;
+    min-height: 60px;
     margin-left: 5px;
     box-sizing: border-box;
-    transition: all 0.8s;
+}
+
+@keyframes column__animation {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.columns--active {
+    animation-duration: calc(var(--bounce__delay) * 1ms);
+    animation-name: column__animation;
+    border-color: var(--active__columns__border);
+}
+
+@keyframes flip__animation {
+    0% {
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.animation {
     transform-style: preserve-3d;
     transform-origin: center;
+    animation-name: flip__animation;
+    animation-duration: calc(var(--flip__delay) * 1ms);
 }
+
 
 .rows {
     display: flex;
@@ -65,10 +103,6 @@ body {
     left: auto;
 }
 
-.animation {
-    transform: rotateX(360deg);
-}
-
 .yellow {
     background-color: #F3C236;
 }
@@ -81,15 +115,6 @@ body {
     background-color: #a4aec4;
 }
 
-.textMessage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--alerts_bg);
-    padding: 20px;
-    z-index: 10;
-}
 
 header {
     margin: 20px;
@@ -162,4 +187,9 @@ ol div li {
     bottom: calc(50% - 50px);
     text-align: center;
     padding: 50px;
+    z-index: 100;
+}
+
+#loadingMessage {
+    display: block;
 }

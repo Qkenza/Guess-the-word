@@ -54,6 +54,25 @@ const Keyboard = {
         this.keyElement
             .classList.add("keyboard__key");
 
+        if (iconName === "BACKSPACE") {
+            this.keyElement.addEventListener('click', () => {
+                if (inputEvent) {
+                    deleteData()
+                }
+            })
+        } else if (iconName === "ENTER") {
+            this.keyElement.addEventListener('click', () => {
+                if (inputEvent) {
+                    validateRow()
+                }
+            })
+        } else {
+            this.keyElement.addEventListener('click', () => {
+                if (inputEvent) {
+                    addData(iconName)
+                }
+            })
+        }
         if (iconName === "BACKSPACE" || iconName === "ENTER")
             this.keyElement.classList.add('keyboard__key--wide')
 
