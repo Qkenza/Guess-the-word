@@ -55,12 +55,16 @@ const Keyboard = {
             .classList.add("keyboard__key");
 
         if (iconName === "BACKSPACE") {
+            this.keyElement
+                .classList.add("backspace__icon");
             this.keyElement.addEventListener('click', () => {
                 if (inputEvent) {
                     deleteData()
                 }
             })
         } else if (iconName === "ENTER") {
+            this.keyElement
+                .classList.add("enter__icon");
             this.keyElement.addEventListener('click', () => {
                 if (inputEvent) {
                     validateRow()
@@ -86,7 +90,7 @@ const Keyboard = {
 
         this.keyLayout.forEach((key) => {
             const insertLineBreak =
-                ["L", "P", "ENTER"].indexOf(key) !== -1;
+                ["P", "L", "ENTER"].indexOf(key) !== -1;
 
             this._createKeyBtn(key)
             if (key === "BACKSPACE") {

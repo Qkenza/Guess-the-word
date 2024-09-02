@@ -1,4 +1,4 @@
-@keyframes column__animation {
+@keyframes scale_animation {
     0% {
         scale: 1;
     }
@@ -12,9 +12,9 @@
     }
 }
 
-.columns--active {
+.scale__animation {
     animation-duration: calc(var(--bounce__delay) * 1ms);
-    animation-name: column__animation;
+    animation-name: scale_animation !important;
     border-color: var(--active__columns__border);
 }
 
@@ -28,7 +28,7 @@
     }
 }
 
-.animation {
+.flip__animation {
     transform-style: preserve-3d;
     transform-origin: center;
     animation-name: flip__animation;
@@ -37,13 +37,13 @@
 
 
 .yellow {
-    background-color: #F3C236;
+    background-color: #F3C236 !important;
 }
 
 .green {
-    background-color: #78B951;
+    background-color: #78B951 !important;
 }
 
 .gray {
-    background-color: #a4aec4;
+    background-color: #a4aec4 !important;
 }
